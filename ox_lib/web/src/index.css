@@ -1,0 +1,101 @@
+/* Eclipse tokens */
+:root {
+  --bg-body: #0a0a0a;
+  --bg-main: #131313;
+  --bg-card: #1c1c1c;
+  --bg-card-hover: #232323;
+  --bg-card-soft: #16171a;
+  --border-color: rgba(255, 255, 255, 0.06);
+  --border-color-strong: rgba(255, 255, 255, 0.1);
+
+  --text-primary: #ffffff;
+  --text-secondary: #8a8a8a;
+  --text-dark: #5c5c5c;
+
+  --success: #34d399;
+  --danger: #f87171;
+  --warning: #eab308;
+
+  --success-bg: rgba(52, 211, 153, 0.12);
+  --danger-bg: rgba(248, 113, 113, 0.12);
+  --warning-bg: rgba(234, 179, 8, 0.12);
+
+  --font-family: 'Rubik', sans-serif;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+html {
+  color-scheme: normal !important;
+}
+
+body {
+  background: none !important;
+  margin: 0;
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  user-select: none;
+  overflow: hidden !important;
+}
+
+p {
+  margin: 0;
+}
+
+#root {
+  height: 100%;
+}
+
+code {
+  font-family: var(--font-family);
+}
+
+button {
+  font-family: var(--font-family);
+}
+
+:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.35);
+  outline-offset: 2px;
+}
+
+@keyframes progress-bar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+}
+
+.toast-inform {
+  background-color: var(--bg-card);
+}
+
+.toast-success {
+  background-color: var(--success-bg);
+}
+
+.toast-error {
+  background-color: var(--danger-bg);
+}

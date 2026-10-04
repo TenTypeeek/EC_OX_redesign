@@ -1,0 +1,137 @@
+:root {
+    --bg-main: #131313;
+    --bg-card: #1c1c1c;
+    --bg-card-hover: #232323;
+    --border-color: rgba(255, 255, 255, 0.06);
+    --border-color-strong: rgba(255, 255, 255, 0.1);
+
+    --text-primary: #ffffff;
+    --text-secondary: #8a8a8a;
+
+    --font-family: 'Rubik', sans-serif;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    visibility: hidden;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    user-select: none;
+    font-family: var(--font-family);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+    margin: 0;
+}
+
+/* Marker */
+
+#eye {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    margin: -9px 0 0 -9px;
+    border: 2px solid rgba(255, 255, 255, 0.55);
+    border-radius: 4px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35);
+    animation: marker-spin 6s linear infinite;
+    transition:
+        scale 0.25s var(--ease),
+        border-color 0.25s var(--ease),
+        background-color 0.25s var(--ease);
+}
+
+#eye::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    margin: -2px 0 0 -2px;
+    border-radius: 50%;
+    background: var(--text-primary);
+    opacity: 0.8;
+}
+
+#eye.eye-hover {
+    scale: 1.35;
+    border-color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+@keyframes marker-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Options */
+
+#options-wrapper {
+    position: absolute;
+    top: calc(50% - 22px);
+    left: calc(50% + 28px);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.option-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    min-width: 200px;
+    height: 44px;
+    padding: 0 16px 0 8px;
+    background: var(--bg-main);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition:
+        background-color 0.25s var(--ease),
+        border-color 0.25s var(--ease),
+        color 0.25s var(--ease),
+        transform 0.25s var(--ease);
+}
+
+.option-container:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-color-strong);
+    color: var(--text-primary);
+    transform: translateX(4px);
+}
+
+.option-icon-tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.option-icon {
+    font-size: 13px;
+    color: var(--text-primary);
+}
+
+.option-label {
+    font-size: 13px;
+    font-weight: 500;
+}
